@@ -1,0 +1,22 @@
+{
+  "name": "guthub",
+  "version": "0.1",
+  "authors": [
+    "think2011 <452125301@qq.com>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "seajs": "*",
+    "angular": "~1.2.12",
+    "bootstrap": "~3.1.1",
+    "angular-route": "~1.2.13"
+  }
+}

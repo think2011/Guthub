@@ -1,0 +1,48 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <span class="pull-right">
+            <button ng-if="temp" ng-click="recipe_edit()" class="btn btn-success btn-xs">保存</button>
+            <button ng-if="!temp" ng-click="recipe_save()" class="btn btn-success btn-xs">保存</button>
+            <a href="#" class="btn btn-default btn-xs">返回</a>
+        </span>
+        {{ temp ? '修改 '+ temp.title : '添加菜谱' }}
+    </div>
+    <form class="form-horizontal">
+        <div class="panel-body">
+            <div class="form-group">
+                <label class="col-sm-2 control-label">菜名</label>
+                <div class="col-sm-10">
+                    <input focus ng-model="recipe.title" class="form-control" placeholder="菜谱名" type="text"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">介绍</label>
+                <div class="col-sm-10">
+                    <textarea ng-model="recipe.desc" class="form-control" placeholder="简单说明" rows="2"></textarea>
+                </div>
+            </div>
+            <div class="line"></div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">材料</label>
+                <div class="col-sm-10">
+                    <table class="table">
+                        <tr ng-repeat="ingredient in recipe.ingredients">
+                            <td><input ng-model="ingredient.ingredientName" class="form-control"placeholder="材料名" type="text"/></td>
+                            <td><input ng-model="ingredient.amount" class="form-control" placeholder="数量" type="text"/></td>
+                            <td><input ng-model="ingredient.amountUnits" class="form-control" placeholder="单位" type="text"/></td>
+                            <td><button ng-click="ingredient_del($index)" class="btn btn-link">×</button></td>
+                        </tr>
+                    </table>
+                    <button ng-click="ingredient_add()" class="pull-right btn btn-link">加多一条</button>
+                </div>
+            </div>
+            <div class="line"></div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">做法</label>
+                <div class="col-sm-10">
+                    <textarea ng-model="recipe.practice" class="form-control" placeholder="具体做法" rows="5"></textarea>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

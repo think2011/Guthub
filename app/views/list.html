@@ -1,0 +1,15 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <a href="#/recipe/add" class="btn btn-success btn-xs pull-right">新增</a>
+        菜谱列表
+    </div>
+    <ul class="list-group">
+        <li ng-if="!recipes.length" class="list-group-item text-center text-muted">尚无菜谱，请先录入菜谱 <i class="glyphicon glyphicon-hand-up"></i> </li>
+        <li ng-repeat="recipe in recipes" class="list-group-item">
+            <a href="#/recipe/{{ recipe._id }}">
+                <span class="pull-right text-muted"><i class="fa fa-chevron-right"></i></span>
+                {{ recipe.title }}
+            </a>
+        </li>
+    </ul>
+</div>

@@ -1,0 +1,28 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <a href="#" class="btn btn-default btn-xs pull-right">返回</a>
+        <a href="#/recipe/edit/{{ recipe._id }}" class="btn btn-warning btn-xs pull-right">修改</a>
+        <a href="#/recipe/del/{{ recipe._id }}" class="btn btn-danger btn-xs pull-right">删除</a>
+        {{ recipe.title }}
+    </div>
+    <div class="panel-body">
+        <blockquote>
+            <p class="text-muted">介绍</p>
+            <p>
+                {{ recipe.desc }}
+            </p>
+        </blockquote>
+        <blockquote>
+            <p class="text-muted">材料</p>
+                <div ng-repeat="ingredient in recipe.ingredients">
+                    {{ ingredient.amount }} {{ ingredient.amountUnits }} {{ ingredient.ingredientName }}
+                </div>
+        </blockquote>
+        <blockquote>
+            <p class="text-muted">做法</p>
+            <p>
+                {{ recipe.practice }}
+            </p>
+        </blockquote>
+    </div>
+</div>
