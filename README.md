@@ -1,5 +1,5 @@
-用angularJS+mongodb+express实现的菜谱应用
-======
+用angular+mongoose+express实现的菜谱应用
+=======
 
 还用了bower来管理JS文件
 
